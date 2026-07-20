@@ -264,7 +264,7 @@ function draw() {
 						lastFroze.physics = DYNAMIC;
 					}
 					i.physics = STATIC;
-					lastFroze = spawnedBlocks[i];
+					lastFroze = i;
 				}
 			}
 		}
