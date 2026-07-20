@@ -94,19 +94,16 @@ function draw() {
 	mouse.cursor = "default";
 
 	if (hunting == false) {
-		console.log("normal me vs....");
-		background(10, 200, 255, 180);
+		background(10, 200, 255);
 		image(textures[5], (Math.sin((-(frameCount + 1800) / 3600) * Math.PI) * halfWidth) + halfWidth - 60, (Math.cos((-(frameCount + 1800) / 3600) * Math.PI) * halfHeight * 0.75) + halfHeight - 60, (Math.sin(frameCount / 1200) * 180) + 60, (Math.sin(frameCount / 1200) * 180) + 60); // this is the sun
 	} else {
-		console.log("evil me >:)");
-		background(25, 0, 50, 180);
+		background(25, 0, 50);
 		if (Math.random() < 0.01) {
 			newEnemy(plr.x, -1000);
 		}
 		if (enemies.length > 0) {
 			for (let s of enemies) {
 				s.attractTo(plr, round / 2);
-				console.log("working");
 				if (Math.abs(plr.x - s.x) < 35 && Math.abs(plr.y - s.y) < 35) {
 					if (frameCount % 5 == 0 && plr.health > 0) {
 						plr.health -= 1;
@@ -216,12 +213,10 @@ function draw() {
 			// do NOT stop the sound, it could be a little better if they overlap
 			sounds[4].play();
 		} else if (kb.pressing('r')) {
-			console.log("real")
 			if (b1 instanceof Sprite && b2 === null) {
 				for (let i of spawnedBlocks) {
 					if (i.mouse.hovering() && (i.y <= plr.y || Math.abs(i.x - plr.x) > 10)) {
 						b2 = i;
-						console.log(i);
 					}
 				}
 
@@ -238,7 +233,6 @@ function draw() {
 				for (let i of spawnedBlocks) {
 					if (i.mouse.hovering() && (i.y <= plr.y || Math.abs(i.x - plr.x) > 10)) {
 						b1 = i;
-						console.log(i);
 					}
 				}
 			}
