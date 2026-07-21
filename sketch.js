@@ -164,7 +164,7 @@ function draw() {
 	jumpDB += 1;
 
 	// this provides a way to hold your horses
-	if (kb.pressed('s')) {
+	if (kb.pressed('down')) {
 		plr.vel = new Vector(0, 0);
 		plr.rotationSpeed = 0;
 	}
